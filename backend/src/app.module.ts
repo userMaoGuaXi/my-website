@@ -3,6 +3,7 @@ import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { ProjectsModule } from './projects/projects.module';
 
 @Module({
   imports: [
@@ -19,6 +20,7 @@ import { AppService } from './app.service';
       autoLoadEntities: true,
       synchronize: true, // 仅在开发环境使用
     }),
+    ProjectsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
